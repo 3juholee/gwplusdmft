@@ -1,0 +1,79 @@
+#!/bin/bash
+########################################################################
+# SUN Grid Engine job wrapper
+# parallel job on opteron queue
+########################################################################
+#$ -N gwd_v9_mv
+#$ -pe mpi2_14 40
+#$ -q wp02
+#$ -j y
+#$ -M 3juholee@physics.rutgers.edu
+#$ -m e
+#$ -v WIEN_DMFT_ROOT,LD_LIBRARY_PATH
+########################################################################
+# DON'T remove the following line!
+source $TMPDIR/sge_init.sh
+########################################################################
+source ~/.bashrc
+export WIEN_DMFT_ROOT=/opt/apps/dmft/bin
+
+export PYTHONPATH=/home/naivephya/pyquante_lib:$PYTHONPATH
+export SCRATCH="."
+
+export SMPD_OPTION_NO_DYNAMIC_HOSTS=1
+export OMP_NUM_THREADS=1
+
+#export new_ldmft_source="/home/naivephya/dimer/project/new_lda+dmft/Source"
+
+echo "/opt/mpich2/intel/14.0/bin/mpiexec  -port $port -np $NSLOTS -machinefile $TMPDIR/machines -env OMP_NUM_THREADS 1 -envlist  LD_LIBRARY_PATH,SCRATCH,WIEN_DMFT_ROOT,PYTHONPATH,WIENROOT" > mpi_prefix.dat
+
+basis='ccpvtz'
+beta=100
+Nomega=5000
+Mstep=10e6
+Nitt=35
+mixr=0.5
+nom=200
+nomD=0
+
+#1/15/2016
+#for x in 5.0 1.4 #spectra
+
+#for x in 0.6 0.8 1.0 1.2 1.3 1.35 1.45 1.5 1.6
+#for x in 1.8 2.0 2.5 3.0 3.4 3.6 3.8 4.0 4.5 5.5
+#for x in 3.0 3.2 3.4 3.6 3.8 4.0 4.5 5.0
+
+#1/16/2016
+#for x in 2.5 3.0 3.2 3.4
+#from 3.8 old Delta (insultator)
+#for x in 3.6 3.8 4.0 4.5 5.0 #Nfix
+
+#1/17/2016
+#for x in 2.5 3.0 3.2 3.4
+#for x in 3.6 3.8 
+#for x in 4.0 4.5 5.0 #Nfix
+
+
+#1/18/2016
+#for x in 3.0 3.5 4.0 4.5 5.0
+#for x in 5.0
+
+#1/25/2016
+#for x in 4.0
+#for x in 4.5
+#for x in 5.0
+
+#for x in 1.35 1.4 1.45
+for x in 4.25 4.75
+
+do
+	mkdir $WORK/$jobdir/$x
+	rcp $WORK/$jobdir/* $WORK/$jobdir/$x #copy source files
+	cd $WORK/$jobdir/$x
+	
+	#mu=mean value
+	python gwd_v9.py  --dmft --R $x --basis $basis --beta $beta --Nomega $Nomega --Mstep $Mstep --Nitt $Nitt --mixr $mixr --nom $nom > data
+	#Nfix
+	#python gwd_v9.py --Nfix --dmft --R $x --basis $basis --beta $beta --Nomega $Nomega --Mstep $Mstep --Nitt $Nitt --mixr $mixr --nom $nom --nomD $nomD > data
+	cp $WORK/$jobdir/$x/imp/Delta.dat $WORK/$jobdir/
+done
