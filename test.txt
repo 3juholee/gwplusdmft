@@ -1,4 +1,0 @@
-Test if README.txt is the only file that needs to additional "git add" to
-commit completely
-
-change1: asdkfhasdifhalsi

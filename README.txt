@@ -6,7 +6,9 @@ PREREQUISITES:
 
 Comments:
 	Each folder contains different version of GW+DMFT execution file.
-		-> execution: types like "gwd*.py"
+		-> gwd/: fully self-consistent GW+DMFT (or only GW)
+		-> gwd_v9/: ver9 of GW+DMFT
+		-> gwd_at_lda: G0W0+DMFT with H0 at LDA level
 	src: common libaries which is called by execution files in each GW+DMFT folder
 
 
