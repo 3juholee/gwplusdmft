@@ -1,6 +1,15 @@
-Each folder contains different version of GW+DMFT execution file.
-	-> execution: types like "gwd*.py"
-src: common libaries which is called by execution files in each GW+DMFT folder
+
+
+PREREQUISITES:
+	1. PyQuante library: you can install it from "http://pyquante.sourceforge.net/"
+	2. CTQMC (continuous-time quantum Monte Carlo) for DMFT calculation
+
+Comments:
+	Each folder contains different version of GW+DMFT execution file.
+		-> execution: types like "gwd*.py"
+	src: common libaries which is called by execution files in each GW+DMFT folder
+
+
 
 
 
