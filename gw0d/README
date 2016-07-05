@@ -1,6 +1,0 @@
-fully self-consistent GW+DMFT calculation
-
-Options:
-	"--natom n": number of atom (n=1 default for H2)
-	"--R R": interatomic distance in atomic unit (Bohr radius)
-	"
