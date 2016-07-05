@@ -1,9 +1,9 @@
-PREREQUISITES:
+PREINSTALL:
     1. PyQuante library: 
         -"http://pyquante.sourceforge.net/"
     2. CTQMC (continuous-time quantum Monte Carlo) for DMFT calculation
         -"http://hauleweb.rutgers.edu/downloads/"
-        -See also additional prequisites such as python and C++
+        -See also additional preinstallations such as python and C++
         -Download "dmft_w2k.tgz" (version 2015)
         -Extract:  "tar -zxvf dmft_w2k.tgz"
         -Install according to "http://hauleweb.rutgers.edu/tutorials/Installation.html"
