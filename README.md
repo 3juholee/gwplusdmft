@@ -7,12 +7,12 @@ Preinstallment:
   -"http://pyquante.sourceforge.net/"
   
 2. CTQMC (continuous-time quantum Monte Carlo) for DMFT calculation
-  -"http://hauleweb.rutgers.edu/downloads/"
-  -See also additional preinstallations such as python and C++
-  -Download "dmft_w2k.tgz" (version 2015)
-  -Extract:  "tar -zxvf dmft_w2k.tgz"
-  -Install according to "http://hauleweb.rutgers.edu/tutorials/Installation.html"
-  -"export WIEN_DMFT_ROOT=where_your_bin_folder_is"
+  - "http://hauleweb.rutgers.edu/downloads/"
+  - See also additional preinstallations such as python and C++
+  - Download "dmft_w2k.tgz" (version 2015)
+  - Extract:  "tar -zxvf dmft_w2k.tgz"
+  - Install according to "http://hauleweb.rutgers.edu/tutorials/Installation.html"
+  - "export WIEN_DMFT_ROOT=where_your_bin_folder_is"
 
 Comments:
 ----
