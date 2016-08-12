@@ -4,7 +4,7 @@ Combined GW and DMFT on H2 molecule
 Preinstallment:
 ----
 1. PyQuante library: 
-  -"http://pyquante.sourceforge.net/"
+  - "http://pyquante.sourceforge.net/"
   
 2. CTQMC (continuous-time quantum Monte Carlo) for DMFT calculation
   - "http://hauleweb.rutgers.edu/downloads/"
